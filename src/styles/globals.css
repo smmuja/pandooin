@@ -10,6 +10,15 @@
 
 /* TYPOGRAPHY */
 
+@font-face {
+  font-family: the-signature;
+  src: url(/assets/fonts/thesignature.otf);
+}
+@font-face {
+  font-family: unbounded;
+  src: url(/assets/fonts/unbounded.ttf);
+}
+
 h1 {
   display: block;
   font-size: 2em;

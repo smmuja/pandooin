@@ -9,10 +9,19 @@ const config: Config = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      sans: ["ui-sans-serif", "system-ui"],
+      serif: ["ui-serif", "Georgia"],
+      mono: ["ui-monospace", "SFMono-Regular"],
+      display: ["Oswald"],
+      body: ['"Open Sans"'],
+      thesignature: ["the-signature"],
+      unbounded: ["unbounded"],
+    },
     colors: {
       transparent: "transparent",
       current: "currentColor",
-      "yellow-tan": "#6A999B",
+      "yellow-tan": "#D0B86E",
       "green-tosca": "#3B7777",
       "white-smoke": "#FAF9F5",
       "white-paper": "#FAF9F5",
