@@ -1,4 +1,5 @@
 import {
+  Articles,
   BeyondPremium,
   Destinations,
   Hero,
@@ -14,6 +15,7 @@ export function HomeWrapper() {
         <BeyondPremium />
         <Destinations />
         <LuxuryFootages />
+        <Articles />
       </div>
     </>
   );
