@@ -1,7 +1,7 @@
 "use client";
 
 import { useQuery } from "react-query";
-import { getArticles } from "api/getArticles";
+import { getArticles } from "api/articles/getArticles";
 
 export function useGetArticle() {
   const { data, isLoading, isError } = useQuery({
