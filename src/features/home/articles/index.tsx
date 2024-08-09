@@ -1,4 +1,4 @@
-import { useGetArticle } from "api/hooks/useGetArticle";
+import { useGetArticle } from "api/articles/hooks";
 import style from "./articles.module.css";
 
 export function Articles() {
