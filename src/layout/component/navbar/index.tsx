@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { navlink } from "config";
 import Image from "next/image";
+import { HamburgerMenu } from "../hamburgerMenu";
 
 export function Navbar() {
   return (
     <>
-      <nav className="bg-white-smoke flex justify-around items-center px-3 sticky top-0 text-green-tosca font-semibold z-10">
+      <nav className="bg-white-smoke flex justify-between lg:justify-around items-center px-3 sticky top-0 text-green-tosca font-semibold z-10">
         <Link href="/">
           <Image
             src="/assets/logo/zamrood-logo-text.png"
@@ -14,7 +15,8 @@ export function Navbar() {
             height={50}
           />
         </Link>
-        <div className="bg-pink-500 flex gap-3 py-3">
+        <HamburgerMenu />
+        <div className="lg:flex gap-3 py-3 hidden">
           {navlink.map((item) => (
             <Link
               key={item.id}
