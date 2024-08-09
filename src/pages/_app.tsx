@@ -2,8 +2,12 @@ import { MainLayout } from "layout";
 import "styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import ReactQueryProvider from "utils/providers";
+import { QueryClient } from "react-query";
+import { useState } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
+  const [queryClient] = useState(() => new QueryClient());
   return (
     <>
       <Head>
@@ -12,7 +16,9 @@ export default function App({ Component, pageProps }: AppProps) {
         </title>
       </Head>
       <MainLayout>
-        <Component {...pageProps} />
+        <ReactQueryProvider>
+          <Component {...pageProps} />
+        </ReactQueryProvider>
       </MainLayout>
     </>
   );
