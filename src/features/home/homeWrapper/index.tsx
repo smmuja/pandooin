@@ -1,5 +1,4 @@
-import { Hero } from "features/home";
-import { BeyondPremium } from "../beyondPremium";
+import { BeyondPremium, Destinations, Hero } from "features/home";
 
 export function HomeWrapper() {
   return (
@@ -7,6 +6,7 @@ export function HomeWrapper() {
       <div className="bg-white-smoke">
         <Hero />
         <BeyondPremium />
+        <Destinations />
       </div>
     </>
   );
