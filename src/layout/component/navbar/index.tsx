@@ -5,7 +5,7 @@ import Image from "next/image";
 export function Navbar() {
   return (
     <>
-      <nav className="bg-white-smoke flex justify-around items-center px-3 sticky top-0 text-green-tosca font-semibold">
+      <nav className="bg-white-smoke flex justify-around items-center px-3 sticky top-0 text-green-tosca font-semibold z-10">
         <Link href="/">
           <Image
             src="/assets/logo/zamrood-logo-text.png"
