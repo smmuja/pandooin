@@ -28,7 +28,7 @@ export function Footer() {
         </div>
         <div className="flex gap-5">
           {footerSocial.map((item) => (
-            <a href={item.url} key={item.id}>
+            <a href={item.url} key={item.name}>
               <img src={item.iconSrc} alt={item.name} />
             </a>
           ))}
