@@ -6,7 +6,7 @@ import { HamburgerMenu } from "../hamburgerMenu";
 export function Navbar() {
   return (
     <>
-      <nav className="bg-white-smoke flex justify-between lg:justify-around items-center px-3 sticky top-0 text-green-tosca font-semibold z-10">
+      <nav className="bg-white-smoke flex justify-between lg:justify-around items-center px-3 py-2 sticky top-0 text-green-tosca font-semibold z-10">
         <Link href="/">
           <Image
             src="/assets/logo/zamrood-logo-text.png"
