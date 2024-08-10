@@ -1,28 +1,7 @@
+import { useGetDestinations } from "api";
+
 export function Destinations() {
-  const data = [
-    {
-      id: 1,
-      imgUrl:
-        "https://www.zamrood.com/_next/image?url=https%3A%2F%2Fik.imagekit.io%2Fpandooin%2Ftr%3Apr-true%2Fproduction%2Fimages%2Fitinerary%2Fpremium-trip-labuan-bajo-liveboard-in-vinca-voyages-phinisi%2FS3TRAnYrcDnQOLgLxUEivqy4gI2Y2ebA18xXjCY4.jpg&w=1920&q=75",
-      day: 2,
-      title: "[PREMIUM TRIP] Labuan Bajo: Liveboard in VINCA VOYAGES Phinisi",
-      organizer: "Pandooin",
-      description:
-        "We invite you to experience the wonders of Labuan Bajo on an extraordinary adventure aboard a Phinisi boat. Join us on this exclusive journey and enjoy breathtaking natural scenery, beautiful sunsets, and captivating underwater life. Explore exotic islands, snorkel on coral reefs, and savor delicious meals served on board. Let's together create unforgettable holiday memories in Labuan Bajo!",
-      price: 7500000,
-    },
-    {
-      id: 2,
-      imgUrl:
-        "https://www.zamrood.com/_next/image?url=https%3A%2F%2Fik.imagekit.io%2Fpandooin%2Ftr%3Apr-true%2Fproduction%2Fimages%2Fitinerary%2Fpremium-trip-labuan-bajo-liveboard-in-vinca-voyages-phinisi%2FS3TRAnYrcDnQOLgLxUEivqy4gI2Y2ebA18xXjCY4.jpg&w=1920&q=75",
-      day: 2,
-      title: "[PREMIUM TRIP] Labuan Bajo: Liveboard in VINCA VOYAGES Phinisi",
-      organizer: "Pandooin",
-      description:
-        "We invite you to experience the wonders of Labuan Bajo on an extraordinary adventure aboard a Phinisi boat. Join us on this exclusive journey and enjoy breathtaking natural scenery, beautiful sunsets, and captivating underwater life. Explore exotic islands, snorkel on coral reefs, and savor delicious meals served on board. Let's together create unforgettable holiday memories in Labuan Bajo!",
-      price: 7500000,
-    },
-  ];
+  const { data, isLoading, isError } = useGetDestinations();
 
   const currencyIDR = new Intl.NumberFormat("en-En", {
     style: "currency",
@@ -30,21 +9,33 @@ export function Destinations() {
     maximumFractionDigits: 0,
     minimumFractionDigits: 0,
   });
+
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
+
+  if (isError) {
+    return <div>Error fetching data</div>;
+  }
+
   return (
     <>
       <div className="p-4 text-dark-green">
         <h3>Destinations</h3>
-        {data.map((item) => (
-          <div className="" key={item.id}>
-            <img src={item.imgUrl} alt="" />
+
+        {data?.map((item) => (
+          <div className="" key={item.name}>
+            {item.imgUrl.map((item) => (
+              <img src={item.imgUrl} key={item.imgid} />
+            ))}
             <p className="text-xs mt-5">
               {item.day} DAYS {item.day - 1} NIGHTS
             </p>
-            <h4 className="text-green-tosca mb-2">{item.title}</h4>
+            <h4 className="text-green-tosca mb-2">{item.name}</h4>
             <p className="text-dark-green text-sm font-medium my-2">
-              Organized by {item.organizer}
+              Organized by {item.partnerName}
             </p>
-            <p className="text-sm">{item.description}</p>
+            <p className="text-sm">{item.shortDescription}</p>
             <div
               className="flex flex-row justify-between mb-5 mt-3
             "
@@ -52,7 +43,8 @@ export function Destinations() {
               <div className="">
                 <p className="text-xs mt-3">Start from</p>
                 <p className="text-dark-green font-semibold">
-                  {currencyIDR.format(item.price)}
+                  {item.price}
+                  {/* {currencyIDR.format(item.price)} */}
                 </p>
               </div>
               <a href="">
