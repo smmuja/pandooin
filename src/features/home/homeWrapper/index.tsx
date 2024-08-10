@@ -4,8 +4,8 @@ import {
   Destinations,
   Hero,
   LuxuryFootages,
+  VisitOurWebsite,
 } from "features/home";
-import { Luxurious_Script } from "next/font/google";
 
 export function HomeWrapper() {
   return (
@@ -15,6 +15,7 @@ export function HomeWrapper() {
         <BeyondPremium />
         <Destinations />
         <LuxuryFootages />
+        <VisitOurWebsite />
         <Articles />
       </div>
     </>
