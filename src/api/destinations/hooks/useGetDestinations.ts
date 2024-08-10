@@ -26,7 +26,10 @@ export function useGetDestinations() {
     location: item.itinerary_location,
     shortDescription: item.itinerary_short_description,
     longDescription: item.itinerary_long_description,
-    price: item.related_variant.itinerary_variant_pub_price,
+
+    price: currencyIDR.format(
+      Number(item.related_variant.itinerary_variant_pub_price)
+    ),
 
     imgUrl: item.related_galleries.slice(0, 2).map((item) => ({
       imgid: item.gallery_id,
@@ -34,8 +37,6 @@ export function useGetDestinations() {
       imgAltText: item.gallery_alt_text,
     })),
   }));
-
-  console.log(destination);
 
   return {
     data: destination,
