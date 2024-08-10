@@ -22,7 +22,7 @@ const footerSocial = [
 export function Footer() {
   return (
     <>
-      <div className="bg-green-tosca text-white-paper flex flex-col lg:flex-row justify-around items-center mt-10 py-5 gap-5">
+      <div className="bg-green-tosca text-white-paper flex flex-col lg:flex-row justify-around items-center mt-10 py-5 px-3 gap-5">
         <div>
           <p>© 2023 Zamrood by PT Teknologi Pandu Wisata</p>
         </div>
