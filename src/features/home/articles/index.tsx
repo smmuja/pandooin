@@ -13,12 +13,14 @@ export function Articles() {
   }
   return (
     <>
-      <div className="px-5 md:px-24 text-green-tosca">
-        <h3 className="">Articles</h3>
-        <p className="font-normal text-sm py-3">
+      <div className="px-5 md:px-24 text-green-tosca p-4 lg:py-16 lg:px-80 ">
+        <h3 className="lg:text-4xl text-2xl font-extrabold py-3 my-0">
+          Articles
+        </h3>
+        <p className="font-normal text-sm py-3 my-0">
           Our curated writings, offering something for every reader.
         </p>
-        <div className={"grid lg:grid-cols-4 items-stretch gap-3"}>
+        <div className={"grid lg:grid-cols-4 items-stretch gap-3 lg:gap-5"}>
           {data?.map((item) => (
             <a
               href={`blog/article/${item.slug}`}
@@ -30,16 +32,16 @@ export function Articles() {
                 <img
                   src={item.featuredImageUrl}
                   alt={item.featuredImageCaption}
-                  className="grayscale hover:grayscale-0"
+                  className="grayscale hover:grayscale-0 aspect-video"
                 />
               </div>
-              <div className="">
-                <h4
-                  className="text-white-smoke bg-green-tosca mt-0 p-5 md:py-3 md:text-base 
+              <div className="lg:py-0 lg:mt-0">
+                <p
+                  className="text-white-smoke bg-green-tosca md:text-base line-clamp-2 lg:font-medium lg:text-sm lg:px-2
                 "
                 >
                   {item.title}
-                </h4>
+                </p>
               </div>
             </a>
           ))}

@@ -26,8 +26,8 @@ export function Destinations() {
 
   return (
     <>
-      <div id="destination" className="p-4 text-dark-green">
-        <div className="flex flex-col sm:flex-row gap-5 sm:items-center justify-start items-start mb-5">
+      <div id="destination" className="p-4 px-3 lg:px-80 text-dark-green">
+        <div className="flex flex-col sm:flex-row gap-5 sm:items-center lg:justify-center justify-start items-start mb-5">
           <h3 className="text-2xl font-extrabold lg:text-5xl my-3">
             Destinations
           </h3>
@@ -73,7 +73,9 @@ export function Destinations() {
                 <p className="text-xs mt-5">
                   {item.day} DAYS {item.day - 1} NIGHTS
                 </p>
-                <h4 className="text-green-tosca mb-2">{item.name}</h4>
+                <h4 className="text-green-tosca mb-2 lg:text-4xl">
+                  {item.name}
+                </h4>
                 <p className="text-dark-green text-sm font-medium my-2">
                   Organized by {item.partnerName}
                 </p>
@@ -84,13 +86,13 @@ export function Destinations() {
                 >
                   <div className="">
                     <p className="text-xs mt-3">Start from</p>
-                    <p className="text-dark-green font-semibold">
+                    <p className="text-dark-green font-semibold lg:text-3xl">
                       {item.price}
                     </p>
                   </div>
                   <a href={item.slug}>
                     <button
-                      className="rounded-full border-2 border-dark-green text-dark-green font-medium p-2 px-3
+                      className="rounded-full border-2 border-dark-green text-dark-green font-medium p-2 px-3 lg:px-5
               "
                     >
                       See details
@@ -101,13 +103,13 @@ export function Destinations() {
             </div>
           ))}
         </div>
-      </div>
-      <div className="flex gap-3 justify-center items-center my-5 text-dark-green font-medium">
-        <img
-          src="/assets/svg/common-explore-more.svg"
-          alt="Explore more icon"
-        />
-        <p>EXPLORE MORE</p>
+        <div className="flex gap-3 justify-center lg:justify-end lg:px-7 items-center my-5 text-dark-green font-medium">
+          <img
+            src="/assets/svg/common-explore-more.svg"
+            alt="Explore more icon"
+          />
+          <p>EXPLORE MORE</p>
+        </div>
       </div>
     </>
   );
