@@ -1,10 +1,26 @@
-.article img {
-  height: 50%;
+.article:nth-child(1) div img {
+  aspect-ratio: initial;
+  /* height: 100%; */
+  /* padding: 10; */
+}
+
+.article div {
+  padding-bottom: 1%;
+  background: #3b7777;
+}
+
+.article:nth-child(1) div {
+  padding-bottom: 2%;
+  background: #3b7777;
+  /* width: 100%; */
+  display: flex column;
+  /* height: 90%; */
 }
 
 .article:nth-child(1) {
   /* width: 100%; */
   display: flex column;
+  /* height: 90%; */
 }
 
 @media only screen and (min-width: 768px) {
