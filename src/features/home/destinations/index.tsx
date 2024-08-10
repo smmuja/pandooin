@@ -26,7 +26,10 @@ export function Destinations() {
 
   return (
     <>
-      <div id="destination" className="p-4 px-3 lg:px-80 text-dark-green">
+      <div
+        id="destination"
+        className="p-4 px-3 lg:px-50 2xl:px-80 text-dark-green"
+      >
         <div className="flex flex-col sm:flex-row gap-5 sm:items-center lg:justify-center justify-start items-start mb-5">
           <h3 className="text-2xl font-extrabold lg:text-5xl my-3">
             Destinations

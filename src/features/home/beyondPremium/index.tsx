@@ -22,7 +22,7 @@ export function BeyondPremium() {
 
   return (
     <>
-      <div className="text-center bg-white-smoke px-3 lg:px-80">
+      <div className="text-center bg-white-smoke px-3 lg:px-50 2xl:px-80">
         <div>
           <h3 className="font-thesignature text-5xl lg:text-8xl font-normal text-green-tosca mb-2">
             Beyond Premium

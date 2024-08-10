@@ -13,7 +13,7 @@ export function Articles() {
   }
   return (
     <>
-      <div className="px-5 md:px-24 text-green-tosca p-4 lg:py-16 lg:px-80 ">
+      <div className="px-5 md:px-24 text-green-tosca p-4 lg:py-16 lg:px-50 2xl:px-80 ">
         <h3 className="lg:text-4xl text-2xl font-extrabold py-3 my-0">
           Articles
         </h3>

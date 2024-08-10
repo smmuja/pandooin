@@ -15,7 +15,7 @@ export function LuxuryFootages() {
 
   return (
     <>
-      <div className="bg-yellow-tan p-10  lg:px-80 ">
+      <div className="bg-yellow-tan p-10  lg:px-50 2xl:px-80 ">
         <h3 className="font-thesignature text-5xl font-medium text-dark-green mb-2 sm:text-7xl">
           Luxury Footages
         </h3>

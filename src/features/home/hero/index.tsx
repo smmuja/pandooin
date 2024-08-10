@@ -1,8 +1,8 @@
 export function Hero() {
   return (
     <>
-      <div className="text-white-paper text-center lg:text-left bg-[url('/assets/img/home-background.webp')] bg-no-repeat bg-cover bg-top mt-0 h-screen sm:pl-4 px-1 pt-36 md:h-4/5 lg:pt-80 pb-40 sm:pt-48 ">
-        <div className="lg:w-1/2 lg:px-56">
+      <div className="text-white-paper text-center lg:text-left bg-[url('/assets/img/home-background.webp')] bg-no-repeat bg-cover bg-top mt-0 h-screen sm:pl-4 px-1 pt-36 md:h-4/5 lg:pt-56- 2xl:pt-80 pb-40 sm:pt-48 ">
+        <div className="lg:w-2/3 2xl:w-1/2 lg:px-20 2xl:px-32">
           <h3 className="text-7xl xl:text-8xl font-normal font-thesignature text-yellow-tan my-0 mt-10">
             Premium Travel
           </h3>
