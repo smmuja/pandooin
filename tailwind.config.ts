@@ -27,6 +27,7 @@ const config: Config = {
       "white-paper": "#FAF9F5",
       "dark-green": "#004040",
       bermuda: "#78dcca",
+      black: "#000",
     },
     extend: {},
   },
