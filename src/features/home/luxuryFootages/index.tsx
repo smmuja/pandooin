@@ -1,58 +1,66 @@
+import { useEffect, useState } from "react";
+import { twMerge } from "tailwind-merge";
+import { luxuryFootageImgUrl as imgUrl } from "./data";
+
 export function LuxuryFootages() {
-  const imgUrl = [
-    {
-      id: 1,
-      url: "https://www.zamrood.com/_next/image?url=%2Fimages%2Ffootages%2Ffootage-1.webp&w=1920&q=75",
-    },
-    {
-      id: 2,
-      url: "https://www.zamrood.com/_next/image?url=%2Fimages%2Ffootages%2Ffootage-2.jpg&w=1920&q=75",
-    },
-    {
-      id: 3,
-      url: "https://www.zamrood.com/_next/image?url=%2Fimages%2Ffootages%2Ffootage-3.webp&w=1920&q=75",
-    },
-    {
-      id: 4,
-      url: "https://www.zamrood.com/_next/image?url=%2Fimages%2Ffootages%2Ffootage-4.jpg&w=1920&q=75",
-    },
-    {
-      id: 5,
-      url: "https://www.zamrood.com/_next/image?url=%2Fimages%2Ffootages%2Ffootage-5.jpg&w=1920&q=75",
-    },
-    {
-      id: 6,
-      url: "https://www.zamrood.com/_next/image?url=%2Fimages%2Ffootages%2Ffootage-6.jpg&w=1920&q=75",
-    },
-  ];
+  const [intervals, setIntervals] = useState(1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIntervals((prev) => prev + 1);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
-      <div className="bg-yellow-tan p-5">
+      <div className="bg-yellow-tan p-10 ">
         <h3 className="font-thesignature text-5xl font-medium text-dark-green mb-2 sm:text-7xl">
           Luxury Footages
         </h3>
-        <div className="lg:grid grid-cols-3">
-          {imgUrl.map((item) => (
+        <div className="lg:hidden relative min-h-80">
+          {imgUrl.map((item, i) => (
             <img
               key={item.id}
               src={item.url}
               alt="Luxury footages"
-              className="
-                p-5 h-80"
+              className={twMerge(
+                "h-60 aspect-video absolute lg:col-span-1 lg:static",
+                intervals % (i + 1) === 0 ? "opacity-100" : "opacity-0"
+              )}
             />
           ))}
         </div>
-      </div>
-      <div className=" text-white-paper flex flex-col md:flex-row md:justify-between justify-center items-center p-5 m-5 my-16 bg-no-repeat bg-cover bg-center  bg-[url('/assets/img/background-visit-website.png')]">
-        <div>
-          <img src="/assets/img/zamrood-logo-white.png" alt="" />
-        </div>
-        <div>
-          <p>Want to see other destinations? Check us out at our website</p>
-          <a href="" className="flex gap-1">
-            <span>Pandooin.com</span>
-            <img src="/assets/svg/common-arrow.svg" alt="" />
-          </a>
+        {/* Desktop  */}
+        <div className="hidden lg:grid lg:grid-cols-3 relative min-h-80 gap-6 ">
+          {imgUrl.slice(0, 3).map((item, i) => (
+            <img
+              key={item.id}
+              src={item.url}
+              alt="Luxury footages"
+              className={twMerge(
+                "h-60 aspect-video absolute lg:col-span-1 lg:static"
+              )}
+            />
+          ))}
+          <div className="col-span-3">
+            <img
+              src="/assets/svg/common-separator-white.svg"
+              alt=""
+              className="mx-10"
+            />
+          </div>
+          {imgUrl.slice(3).map((item, i) => (
+            <img
+              key={item.id}
+              src={item.url}
+              alt="Luxury footages"
+              className={twMerge(
+                "h-60 aspect-video absolute lg:col-span-1 lg:static"
+              )}
+            />
+          ))}
         </div>
       </div>
     </>
