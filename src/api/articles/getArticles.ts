@@ -1,11 +1,9 @@
-import axios from "axios";
+import { baseApi } from "api/baseApi";
 import { ArticleProps, ArticlePublicProps } from "./types/articleProps";
 
 export async function getArticles(): Promise<ArticleProps[]> {
   try {
-    const response = await axios.get<ArticlePublicProps>(
-      "https://pandooin.com/api/zamrood/article"
-    );
+    const response = await baseApi.get<ArticlePublicProps>("/zamrood/article");
     console.log(response.data.data);
     return response.data.data;
   } catch (error) {
